@@ -1,3 +1,8 @@
+# 정규식
+# 	match, search 등의 함수를 이용하여 문자열을 매칭하여 
+#   해당 문자열이 주어진 조건에 일치하는지를 판단하여 
+#   그 여부나 해당 index를 반환해주는 기능
+
 import re
 
 p = re.compile("ca.e")

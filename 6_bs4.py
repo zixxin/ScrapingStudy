@@ -1,3 +1,7 @@
+# BeautifulSoup4
+# 	네이버 웹툰 홈페이지에서 메뉴 정보들을 끌어오거나, 
+#   태그 간의 이동을 활용하여 인기 웹툰 순위 정보를 끌어오는 방법을 배우고 실습을 통해 결과를 확인할 수 있음
+
 import requests
 from bs4 import BeautifulSoup
 
