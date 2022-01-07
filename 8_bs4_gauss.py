@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*- 
+
 # 특정 웹툰 하나를 선택
 #   그 웹툰 내 원하는 회차의 제목을 끌어올 수 있음
 #   회차의 링크를 끌어와서, 그 링크를 클릭하면 해당 회차 페이지로 바로 접속할 수 있도록 하는 기능 학습 및 실습
@@ -12,7 +14,7 @@ url = "https://comic.naver.com/webtoon/list?titleId=748105&weekday=sun"
 res = requests.get(url)
 res.raise_for_status()
 
-soup = BeautifulSoup(res.text, "lxml")
+soup = BeautifulSoup(res.text, "html.parser")
 cartoons = soup.find_all("td", attrs={"class":"title"})
 title = cartoons[0].a.get_text()
 link = cartoons[0].a["href"]

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*- 
+
 # http method
 #   GET 방식
 #       어떠한 내용을 누구나 볼 수 있게, url에 적어서 보내는 방식
