@@ -59,7 +59,7 @@ print("\n")
 browser.find_element_by_xpath('//*[@id="divReadButton"]/a/img').click()
 time.sleep(1)
 
-# 첫 번째 공지 클릭
+# 두 번째 공지 클릭
 browser.find_element_by_xpath('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[1]/td/table/tbody/tr[19]/td[1]/div/a').click()
 time.sleep(1)
 
