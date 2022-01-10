@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*- 
 
-# 드디어 ,,, 셀레니엄이 돌아가기 시작했다 ,,,, 감격의 눈물 ,,,,,
-# sudo easy_install selenium
-
 import time
 from selenium import webdriver
 import requests
@@ -44,14 +41,14 @@ time.sleep(1)
 # 히즈넷 일반공지 게시판 목록 화면까지 들어온 상태
 
 # 첫 번째 공지 클릭
-browser.find_element_by_xpath('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[1]/td/table/tbody/tr[18]/td[1]/div/a').click()
+browser.find_element_by_xpath('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[1]/td/table/tbody/tr[17]/td[1]/div/a').click()
 time.sleep(1)
 
 # 첫 번째 공지 상세 정보 text 불러오기
 print("\n")
 noti_title1 = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div/span[2]")
 print("[ "+ noti_title1.text +" ]\n")
-noti_info1 = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[3]/td/table/tbody/tr/td")
+noti_info1 = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[4]/td/table/tbody/tr/td")
 print(noti_info1.text)
 print("\n")
 
@@ -60,7 +57,7 @@ browser.find_element_by_xpath('//*[@id="divReadButton"]/a/img').click()
 time.sleep(1)
 
 # 두 번째 공지 클릭
-browser.find_element_by_xpath('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[1]/td/table/tbody/tr[19]/td[1]/div/a').click()
+browser.find_element_by_xpath('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[1]/td/table/tbody/tr[18]/td[1]/div/a').click()
 time.sleep(1)
 
 # 두 번째 공지 상세 정보 text 불러오기
