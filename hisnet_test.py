@@ -63,29 +63,58 @@ for i in range(17,32):
     browser.find_element_by_xpath('//*[@id="divReadButton"]/a/img').click()
     time.sleep(1)
 
-# # 첫 번째 공지 클릭
-# browser.find_element_by_xpath('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[1]/td/table/tbody/tr{i}/td[1]/div/a').click()
-# time.sleep(1)
+# 다음 페이지로 넘어가기
+for i in range(1,10):
+    # 1페이지에 있을 때, 02는 a[1], (2페이지 이상) a페이지에 있을 때, 다음은 a[i+1]
+    if i == 1:
+        browser.find_element_by_xpath('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[4]/td/table/tbody/tr/td/div/a[1]/font').click()
+        time.sleep(1)
 
-# # 첫 번째 공지 상세 정보 text 불러오기
-# print("\n")
-# noti_title1 = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div/span[2]")
-# print("[ "+ noti_title1.text +" ]\n")
-# noti_info1 = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[4]/td/table/tbody/tr/td")
-# print(noti_info1.text)
-# print("\n")
+        # # 페이지 내에 있는 모든 공지 목록 클릭하여 세부정보 받아오기
+        # for i in range(17,32):
+        #     browser.find_element_by_xpath('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[1]/td/table/tbody/tr[{0}]/td[2]/a'.format(i)).click()
+        #     time.sleep(1)
 
-# # 공지 목록 list로 돌아가기
-# browser.find_element_by_xpath('//*[@id="divReadButton"]/a/img').click()
-# time.sleep(1)
+        #     print("\n")
+        #     noti_title = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div/span[2]")
+        #     print("[ "+ noti_title.text +" ]\n")
+        #     noti_info = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[3]/td/table/tbody/tr/td")
 
-# # 두 번째 공지 클릭
-# browser.find_element_by_xpath('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[1]/td/table/tbody/tr[18]/td[1]/div/a').click()
-# time.sleep(1)
+        #     for i in range(1,6):
+        #         if noti_info.text.encode('UTF-8', 'ignore') == "첨부 #1":
+        #             noti_info = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[{0}]/td/table/tbody/tr/td".format(i+3))
+        #         else:
+        #             noti_info = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[{0}]/td/table/tbody/tr/td".format(i+2))
+        #             break
 
-# # 두 번째 공지 상세 정보 text 불러오기
-# noti_title2 = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div/span[2]")
-# print("[ "+ noti_title2.text +" ]\n")
-# noti_info2 = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[3]/td/table/tbody/tr/td")
-# print(noti_info2.text)
-# print("\n")
+        #     print(noti_info.text)
+        #     print("\n")
+
+        #     browser.find_element_by_xpath('//*[@id="divReadButton"]/a/img').click()
+        #     time.sleep(1)
+    else:
+        browser.find_element_by_xpath('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[4]/td/table/tbody/tr/td/div/a[{0}]/font'.format(i+1)).click()
+        time.sleep(1)
+
+        # # 페이지 내에 있는 모든 공지 목록 클릭하여 세부정보 받아오기
+        # for i in range(17,32):
+        #     browser.find_element_by_xpath('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[1]/td/table/tbody/tr[{0}]/td[2]/a'.format(i)).click()
+        #     time.sleep(1)
+
+        #     print("\n")
+        #     noti_title = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div/span[2]")
+        #     print("[ "+ noti_title.text +" ]\n")
+        #     noti_info = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[3]/td/table/tbody/tr/td")
+
+        #     for i in range(1,6):
+        #         if noti_info.text.encode('UTF-8', 'ignore') == "첨부 #1":
+        #             noti_info = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[{0}]/td/table/tbody/tr/td".format(i+3))
+        #         else:
+        #             noti_info = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[{0}]/td/table/tbody/tr/td".format(i+2))
+        #             break
+
+        #     print(noti_info.text)
+        #     print("\n")
+
+        #     browser.find_element_by_xpath('//*[@id="divReadButton"]/a/img').click()
+        #     time.sleep(1)
