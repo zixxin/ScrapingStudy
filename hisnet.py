@@ -62,7 +62,7 @@ for i in range (123, 200):
 
     # 공지 제목
     notis_title = soup.find_all("a")[i+1].string
-    i = i + 1
+    i = i + 2
 
     # notis_list.append(notis)
 
