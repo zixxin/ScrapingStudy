@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*- 
 
+# 공지 목록화면에서 각 공지를 클릭한 후, 공지 제목, 내용을 가져오는 코드
+# 다음 페이지로 넘어갈 수 있는 코드도 포함되어 있음 (10페이지까지)
+
 import time
 from selenium import webdriver
 import requests

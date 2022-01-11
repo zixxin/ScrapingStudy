@@ -2,6 +2,7 @@
 
 # Hisnet 홈페이지 공지 정보 불러오기 + 파이어베이스 db에 저장하기
 # firebase_admin 오류 해결 X !!!
+# 목록 화면에서 공지 번호랑 제목 불러오는 코드
 
 import time
 import re
