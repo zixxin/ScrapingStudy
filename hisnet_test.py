@@ -42,13 +42,17 @@ browser.find_element_by_xpath('/html/body/table[2]/tbody/tr/td[1]/table[1]/tbody
 time.sleep(1)
 
 # 히즈넷 일반공지 게시판 목록 화면까지 들어온 상태
+# 2022년 1월 1일부터 올라온 공지들만 스크래핑하여 파이어베이스 DB에 업로드
 
 # 1페이지 내에 있는 모든 공지 목록 클릭하여 세부정보 받아오기
 for i in range(17,32):
+    # 공지 제목 클릭
     browser.find_element_by_xpath('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[1]/td/table/tbody/tr[{0}]/td[2]/a'.format(i)).click()
+    # # 공지 번호 클릭
+    # browser.find_element('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[1]/td/table/tbody/tr[17]/td[1]/div/a')
     time.sleep(1)
 
-    print("\n")
+    # print("\n")
     noti_title = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div/span[2]")
     print("[ "+ noti_title.text +" ]\n")
     noti_info = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[3]/td/table/tbody/tr/td")
@@ -67,7 +71,7 @@ for i in range(17,32):
     time.sleep(1)
 
 # 다음 페이지로 넘어가기
-for i in range(1,10):
+for i in range(1,5):
     # 1페이지에 있을 때, 02는 a[1], (2페이지 이상) a페이지에 있을 때, 다음은 a[i+1]
     if i == 1:
         browser.find_element_by_xpath('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[4]/td/table/tbody/tr/td/div/a[1]/font').click()
