@@ -3,6 +3,9 @@
 # 공지 목록화면에서 각 공지를 클릭한 후, 공지 제목, 내용을 가져오는 코드
 # 다음 페이지로 넘어갈 수 있는 코드도 포함되어 있음 (10페이지까지)
 
+# 20220112 스크래핑 문제 발견 !!!!!!
+# 공지 내용에 [보이기/감추기]가 있으면 더이상 코드가 실행되지 않고 멈춤 
+
 import time
 from selenium import webdriver
 import requests
@@ -37,6 +40,12 @@ time.sleep(1)
 
 # 일반 공지 메뉴 클릭
 browser.find_element_by_xpath('//*[@id="td_box22_img"]').click()
+# # 학부 공지 메뉴 클릭
+# browser.find_element_by_xpath('//*[@id="td_box23_img"]').click()
+# # 장학 공지 메뉴 클릭
+# browser.find_element_by_xpath('//*[@id="td_box24_img"]').click()
+# # 취업 공지 메뉴 클릭
+# browser.find_element_by_xpath('//*[@id="td_box25_img"]').click()
 
 # 더보기 클릭
 browser.find_element_by_xpath('/html/body/table[2]/tbody/tr/td[1]/table[1]/tbody/tr/td[2]/div/a/img').click()
@@ -53,9 +62,9 @@ for i in range(17,32):
     # browser.find_element('/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table/tbody/tr[1]/td/table/tbody/tr[17]/td[1]/div/a')
     time.sleep(1)
 
-    # print("\n")
-    # noti_title = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div/span[2]")
-    # print("--- "+ noti_title.text +" ---\n")
+    print("\n")
+    noti_title = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div/span[2]")
+    print("--- "+ noti_title.text +" ---\n")
     noti_info = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[3]/td/table/tbody/tr/td")
 
     for i in range(1,6):
