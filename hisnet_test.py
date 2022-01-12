@@ -6,6 +6,7 @@
 import time
 from selenium import webdriver
 import requests
+import re
 from bs4 import BeautifulSoup
 
 browser = webdriver.Chrome("./chromedriver")
@@ -53,8 +54,8 @@ for i in range(17,32):
     time.sleep(1)
 
     # print("\n")
-    noti_title = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div/span[2]")
-    print("[ "+ noti_title.text +" ]\n")
+    # noti_title = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/div/span[2]")
+    # print("--- "+ noti_title.text +" ---\n")
     noti_info = browser.find_element_by_xpath("/html/body/table[1]/tbody/tr[2]/td/table/tbody/tr/td[3]/table/tbody/tr[3]/td/table[1]/tbody/tr[1]/td/table/tbody/tr[3]/td/table/tbody/tr/td")
 
     for i in range(1,6):
